@@ -1,4 +1,4 @@
-const defaultApiUrl = "http://4.224.186.213/evaluation-service/notifications";
+const defaultApiUrl = "/api/notifications";
 
 function normalizeNotification(notification) {
   return {
@@ -25,6 +25,6 @@ export async function fetchNotifications() {
   const notifications = Array.isArray(data.notifications) ? data.notifications : [];
 
   return {
-    notifications: notifications.slice(0, 10).map(normalizeNotification),
+    notifications: notifications.map(normalizeNotification),
   };
 }

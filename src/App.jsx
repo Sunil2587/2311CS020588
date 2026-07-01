@@ -1,6 +1,25 @@
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { NotificationsPage } from "./pages/NotificationsPage";
-import "./App.css";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#2563eb",
+    },
+    background: {
+      default: "#f5f7fb",
+    },
+  },
+  shape: {
+    borderRadius: 12,
+  },
+});
 
 export default function App() {
-  return <NotificationsPage />;
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <NotificationsPage />
+    </ThemeProvider>
+  );
 }
